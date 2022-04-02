@@ -45,12 +45,36 @@
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   <script language="javascript">
-  function myFunction(){
-    var x = document.getElementById("sim-capital");
-    var y = document.getElementById("sim-rate");
+  function simpleCalcu(){
+    var p = document.getElementById("sim-capital");
+    var r = document.getElementById("sim-rate");
+    var t = document.getElementById("sim-time");   
+    var a = document.getElementById("sim-A");
 
-    y.value=x.value;
-  };
+    if (parseFloat(p.value)*parseFloat(r.value)*parseFloat(t.value)) {
+      p = parseFloat(p.value);
+      r = parseFloat(r.value);
+      t = parseFloat(t.value);
+      //a.innerText=p*(1+r*t);
+      a.value=p*(1+r*t);
+    }
+  }
+
+  function compoundCalcu(){
+    var p = document.getElementById("com-capital");
+    var r = document.getElementById("com-rate");
+    var t = document.getElementById("com-time");   
+    var a = document.getElementById("com-A");
+
+    if (parseFloat(p.value)*parseFloat(r.value)*parseFloat(t.value)) {
+      p = parseFloat(p.value);
+      r = parseFloat(r.value);
+      t = parseFloat(t.value);
+      //a.innerText=p*(1+r*t);
+      n = Math.round(p*Math.pow(1+r,t)*100); 
+      a.value=n/100;
+    }
+  }
 
 
   </script>
@@ -95,21 +119,22 @@
         <p class="header">Simple Interest Calculator</p>
         <p> A=P(1+r*t) </p>
         <form name="simpleCal">
-        P = <input class="input-blank" type="number" id="sim-capital">
-        r = <input class="input-blank" type="number" id="sim-rate" onchange="myFunction()">
-        t = <input class="input-blank" type="number" id="sim-time">
-        <p id="sim-A"> A =  </p>
+        P = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-capital">
+        r = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-rate" >
+        t = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-time">
+        <p > A = <input id="sim-A" readonly="readonly"> </p>
       </form>
       </div>
 
       <div id="compound-cal">
         <p class="header">Compound Interest Calculator</p>
         <p> A=P(1+r)^t </p>
-        P = <input class="input-blank" type="number" id="com-capital">
-        r = <input class="input-blank" type="number" id="com-rate"> 
-        t = <input class="input-blank" type="number" id="com-time"> 
+        P = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-capital">
+        r = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-rate"> 
+        t = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-time"> 
+        <br>
 
-        <p id="com-A"> A =  </p>
+        <p>A = <input id="com-A" readonly="readonly"> </p>
 
       </div>
 
