@@ -43,6 +43,10 @@
   <!-- Material Design Lite -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+   <!-- App Styling -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="styles/main.css">
+
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   <script language="javascript">
   var Q = "";
@@ -118,10 +122,7 @@
 
   </script>
 
-  <!-- App Styling -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-  <link rel="stylesheet" href="styles/main.css">
-
+ 
   <!-- TODO: Enable First Input Delay polyfill library. -->
   <!--  <script type="text/javascript">!function(n,e){var t,o,i,c=[],f={passive:!0,capture:!0},r=new Date,a="pointerup",u="pointercancel";function p(n,c){t||(t=c,o=n,i=new Date,w(e),s())}function s(){o>=0&&o<i-r&&(c.forEach(function(n){n(o,t)}),c=[])}function l(t){if(t.cancelable){var o=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,o){function i(){p(t,o),r()}function c(){r()}function r(){e(a,i,f),e(u,c,f)}n(a,i,f),n(u,c,f)}(o,t):p(o,t)}}function w(n){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(e){n(e,l,f)})}w(n),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){c.push(n),s()}}(addEventListener,removeEventListener);</script> -->
 
@@ -130,8 +131,8 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing logo -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
-    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700" style="height:8%">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid" style="height:auto">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
         <h3><i class="material-icons">chat_bubble_outline</i> Friendly Chat</h3>
       </div>
@@ -148,15 +149,15 @@
     </div>
   </header>
 
-  <main class="mdl-layout__content mdl-color--grey-100" style="width=100%">
-    <div id="prob-info-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width:35%; height:auto; float:left; display:inline">
+  <main class="mdl-layout__content mdl-color--grey-100" style="width: 100%">
+    <div id="prob-info-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width:40%; height:95%; float:left; display:inline">
       <div id="probdcrp-container">
-        <h4 class="header">Problem Description</h4>
-        <p>Jenny just celebrated her 18th birthday and she’s an incoming college student! Unfortunately college is expensive and she applied for student loans. The government gives her $30,000 with a simple interest plan at an annual interest rate of 8%. The bank gives her $30,000 with a compound interest plan at an annual interest rate of 7%.</p>
+        <div class="header">Problem Description</div>
+        <div class="prob-text">Jenny just celebrated her 18th birthday and she’s an incoming college student! Unfortunately college is expensive and she applied for student loans. The government gives her $30,000 with a simple interest plan at an annual interest rate of 8%. The bank gives her $30,000 with a compound interest plan at an annual interest rate of 7%.</div>
       </div>
       <div id="simple-cal">
         <p class="header">Simple Interest Calculator</p>
-        <p> A=P(1+r*t) </p>
+        <div class="prob-text"> A=P(1+r*t) </div>
         <form name="simpleCal">
         P = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-capital">
         r = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-rate" >
@@ -167,7 +168,7 @@
 
       <div id="compound-cal">
         <p class="header">Compound Interest Calculator</p>
-        <p> A=P(1+r)^t </p>
+        <div class="prob-text"> A=P(1+r)^t </div>
         P = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-capital">
         r = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-rate"> 
         t = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-time"> 
@@ -180,19 +181,19 @@
       <div id="answer-container">
       <p class="header">Answer Area</p>
 
-        <div id="q1"> Q1: How much debt does Jenny have to repay the government in 10 years?<input type="number" name="q1-answer" id="q1-answer" class="input-blank">
+        <div id="q1" class="prob-text"> Q1: How much debt does Jenny have to repay the government in 10 years?<input type="number" name="q1-answer" id="q1-answer" class="input-blank">
         <button class="submit-button" id="submit-q1" onclick="submit(this);">submit</button></div>
         <br>
-        <div id="q2"> Q2: How much debt does Jenny have to repay the bank in 10 years? (Please keep 2 digits) <input type="number" name="q2-answer" id="q2-answer" class="input-blank">
+        <div id="q2" class="prob-text"> Q2: How much debt does Jenny have to repay the bank in 10 years? (Please keep 2 digits) <input type="number" name="q2-answer" id="q2-answer" class="input-blank">
         <button class="submit-button" id="submit-q2" onclick="submit(this)";>submit</button></div>
         <br>
-        <div id="q3"> Q3: Should Jenny loan money from the government or the bank? <input type="text" name="q3-answer" id="q3-answer" class="input-blank">
+        <div id="q3" class="prob-text"> Q3: Should Jenny loan money from the government or the bank? <input type="text" name="q3-answer" id="q3-answer" class="input-blank">
         <button class="submit-button" id="submit-q3" onclick="submit(this);">submit</button></div>
         <br>
       </div>
     </div>
 
-    <div id="hint-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width: 25%; float:left; display:inline">
+    <div id="hint-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width: 20%; height: 95%; float:left; display:inline">
       <h4 class="header">Hints</h4>
 
         
@@ -203,7 +204,7 @@
 
     </div>
 
-    <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid" style="float:left; display:inline">
+    <div id="messages-card-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="float:left; display:inline; width:35%; height: 95%;">
 
       <!-- Messages container -->
       <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width:100%">

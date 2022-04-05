@@ -96,13 +96,22 @@ main, #messages-card {
   line-height: 20px;
   padding-right: 5px;
   padding-left: 5px;
-  color: #006666;
+  color: #333333;
 }
 
 
 .feedback-hint{
   color:  #ff8000;
 }
+
+.prob-text {
+  font-size: 15px;
+  line-height: 18px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
 
 
 /*customized style ends here*/
