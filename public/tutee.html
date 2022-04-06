@@ -42,6 +42,7 @@
 
   <!-- Material Design Lite -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.typekit.net/jnb6wvl.css">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
    <!-- App Styling -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -192,10 +193,12 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing logo -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700" style="height:8%">
-    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid" style="height:auto">
+  <!-- <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700" style="height:8%"> -->
+  <header>
+    <!-- <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid" style="height:auto"> -->
+    <div>
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-        <h3><i class="material-icons">chat_bubble_outline</i> Friendly Chat</h3>
+        <h3><i class="material-icons">chat_bubble_outline</i> PEER TUTORING</h3>
       </div>
       <div id="user-container">
         <div hidden id="user-pic"></div>
@@ -203,8 +206,9 @@
         <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           Sign-out
         </button>
-        <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          <i class="material-icons">account_circle</i>Sign-in with Google
+        <!-- <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"></button> -->
+        <button id="sign-in">
+          <i class="material-icons">account_circle</i> Sign in with Google
         </button>
       </div>
     </div>
@@ -218,38 +222,35 @@
       </div>
       <div id="simple-cal">
         <p class="header">Simple Interest Calculator</p>
-        <div class="prob-text"> A=P(1+r*t) </div>
+        <div class="prob-text">A = P (1 + r*t)</div>
         <form name="simpleCal">
-        P = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-capital">
-        r = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-rate" >
-        t = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-time">
-        <p > A = <input id="sim-A" readonly="readonly"> </p>
+        <p class="calc">P = <input onchange="simpleCalcu();" type="number" id="sim-capital">
+        r = <input onchange="simpleCalcu();" type="number" id="sim-rate" >
+        t = <input onchange="simpleCalcu();" type="number" id="sim-time">
+        A = <input id="sim-A" readonly="readonly"></p>
       </form>
       </div>
 
       <div id="compound-cal">
         <p class="header">Compound Interest Calculator</p>
-        <div class="prob-text"> A=P(1+r)^t </div>
-        P = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-capital">
-        r = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-rate"> 
-        t = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-time"> 
-        <br>
-
-        <p>A = <input id="com-A" readonly="readonly"> </p>
-
+        <div class="prob-text"> A = P (1 + r)^t </div>
+        <p class="calc">P = <input onchange="compoundCalcu();" type="number" id="com-capital">
+        r = <input onchange="compoundCalcu();" type="number" id="com-rate">
+        t = <input onchange="compoundCalcu();" type="number" id="com-time">
+        A = <input id="com-A" readonly="readonly"></p>
       </div>
 
       <div id="answer-container">
       <p class="header">Answer Area</p>
 
-        <div id="q1" class="prob-text"> Q1: How much debt does Jenny have to repay the government in 10 years?<input type="number" name="q1-answer" id="q1-answer" class="input-blank">
-        <button class="submit-button" id="submit-q1" onclick="submit(this);">submit</button></div>
+        <div id="q1" class="prob-text"><strong>Q1. </strong> How much debt does Jenny have to repay the government in 10 years?<input type="number" name="q1-answer" id="q1-answer" class="input-blank">
+        <button class="submit-button" id="submit-q1" onclick="submit(this);">Submit</button></div>
         
-        <div id="q2" class="prob-text"> Q2: How much debt does Jenny have to repay the bank in 10 years? (Please keep 2 digits) <input type="number" name="q2-answer" id="q2-answer" class="input-blank">
-        <button class="submit-button" id="submit-q2" onclick="submit(this)";>submit</button></div>
+        <div id="q2" class="prob-text"><strong>Q2. </strong> How much debt does Jenny have to repay the bank in 10 years? (Please keep 2 digits) <input type="number" name="q2-answer" id="q2-answer" class="input-blank">
+        <button class="submit-button" id="submit-q2" onclick="submit(this)";>Submit</button></div>
         
-        <div id="q3" class="prob-text"> Q3: Should Jenny loan money from the government or the bank? <input type="text" name="q3-answer" id="q3-answer" class="input-blank">
-        <button class="submit-button" id="submit-q3" onclick="submit(this);">submit</button></div>
+        <div id="q3" class="prob-text"><strong>Q3. </strong> Should Jenny loan money from the government or the bank? <input type="text" name="q3-answer" id="q3-answer" class="input-blank">
+        <button class="submit-button" id="submit-q3" onclick="submit(this);">Submit</button></div>
         
       </div>
     </div>
@@ -276,7 +277,7 @@
           <form id="message-form" action="#">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="message" autocomplete="off">
-              <label class="mdl-textfield__label" for="message">Message...</label>
+              <label id="here" class="mdl-textfield__label" for="message">Type here</label>
             </div>
             <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
               Send
@@ -285,7 +286,7 @@
           <form id="image-form" action="#">
             <input id="mediaCapture" type="file" accept="image/*" capture="camera">
             <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
-              <i class="material-icons">image</i>
+              <i id="pic" class="material-icons">image</i>
             </button>
           </form>
         </div>

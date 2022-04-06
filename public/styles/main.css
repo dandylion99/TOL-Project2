@@ -14,9 +14,67 @@
  * limitations under the License.
  */
 
- html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+ html, body, p {
+  font-family: 'Lato', 'Helvetica', sans-serif;
 }
+
+header {
+  background-color: #f5f5f5;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-size: 20px;
+}
+h4.header {
+  margin: 0;
+}
+p.calc {
+  margin: 20px 0 0 20px;
+}
+
+#simple-cal #compound-cal {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  margin: 20px 0;
+}
+#submit #here{
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+h3 {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 20px;
+  color: #f5f5f5;
+}
+.sentence {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #333333;
+  margin: 0 0 20px 20px;
+}
+
+#sign-in {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #333333;
+  border-style: none;
+  background-color: #f5f5f5;
+  margin: 0 20px;
+}
+
+#prob-info-container{
+  border-radius: 10px;
+}
+#feedback-area-container{
+  border-radius: 10px;
+}
+#hint-container {
+  border-radius: 10px;
+}
+
 main, #messages-card {
   height: 100%;
   padding-bottom: 0;
@@ -26,9 +84,10 @@ main, #messages-card {
   width : 35%;
   padding-bottom: 0;
   float: left;
+  border-radius: 10px;
 }
 #messages-card {
-  margin-top: 15px;
+  margin: 0px;
 }
 .mdl-layout__header-row span {
   margin-left: 15px;
@@ -39,9 +98,12 @@ main, #messages-card {
   margin: auto;
 }
 .material-icons {
-  font-size: 36px;
-  top: 8px;
+  font-size: 24px;
+  top: 5px;
   position: relative;
+}
+#pic {
+  left: 5px;
 }
 .mdl-layout__header-row {
   padding: 0;
@@ -72,23 +134,62 @@ main, #messages-card {
 
 .hint-card {
   display: block;
-  margin-top: 10px;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #333333;
   border-top: 1px solid #f3f3f3;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-bottom: 2px dotted red;
+  padding: 20px;
+  border-bottom: 1px dashed red;
   white-space: normal;
-  word-wrap:break-word;
-
+  word-wrap: break-word;
 }
 
-.submit-button {
-
+input {
+  width: 50px;
+  height: 25px;
+  margin-right: 50px;
+  border: 1px solid black;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: #e0e0e0;
 }
-
 .input-blank {
-  width:  80px;
+  width: 200px;
+  margin: 20px 10px 0 0;
+}
+.submit-button {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 10px 0;
+  padding: 5px;
+  background-color: #2457C5;
+  border-style: none;
+  border-radius: 20px;
+  color: #ffffff;
+  width: 75px;
+}
+.send {
+  border-style: none;
+  background-color: #ffffff;
+  height: 20px;
+  width: 20px;
+}
+.fly {
+  width: 35px;
+  height: auto;
+}
+select {
+  height: 25px;
+  border: 1px solid black;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: #e0e0e0;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #333333;
 }
 
 .input-blank::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
@@ -99,23 +200,35 @@ main, #messages-card {
 }
 
 .header{
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 700;
   font-size: 20px;
-  line-height: 20px;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding: 20px;
   color: #333333;
 }
 
+p.header {
+  margin: 0;
+}
 
 .feedback-hint{
-  color:  #ff8000;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  padding: 0 0 20px 20px;
+  color: red;
 }
 
 .prob-text {
-  font-size: 15px;
-  line-height: 18px;
-  padding-right: 5px;
-  padding-left: 5px;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 20px;
+  padding: 20px;
+  background-color: #F0F6FB;
+  border-radius: 5px;
 }
 
 .role-box {
@@ -279,10 +392,13 @@ main, #messages-card {
   }
 }
 .mdl-textfield__label:after {
-  background-color: #0288D1;
+  background-color: #2457C5;
 }
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
-  color: #0288D1;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #2457C5;
 }
 .mdl-button .material-icons {
   top: -1px;
