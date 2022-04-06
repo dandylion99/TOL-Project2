@@ -192,6 +192,24 @@
     }, false);
   }
 
+  function changeHint(){
+    var h = document.getElementById("situation-hint");
+    var sel =  document.getElementById("select-situation");
+    var i = sel.selectedIndex;
+    var v = sel[i].value;
+    if (v=="pause"){
+      str = 'You can offer to answer questions by asking “do you have any questions”.';
+      h.innerText = str;
+    }else if (v=="ask"){
+      str = 'Let’s guide your tutee to figure out the answer.';
+      h.innerText = str;
+    }else if (v=="screenshot"){
+      str = "Feel free to use the feedback generator to quickly give feedback. If you want to explain more, you can type freely in the text box.";
+      h.innerText = str;
+    }
+
+  }
+
 
   </script>
 
@@ -333,11 +351,20 @@
     <div id="hint-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width: 20%; height: 95%; float:left; display:inline">  
       <p class="header">Hints for Feedback</p>
       <div class="hint-card">
-        <p>hint1hint1hint1hint1hint1hint1hint1hint1hint1.</p>
-      </div>
+        <div>
+          <div class="feedback-hint">Select your current situation and see hints for feedback!</div>
+          If <select id="select-situation" onchange="changeHint();">
+            <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+            <option value="pause">tutee pauses too long</option>
+            <option value="ask">tutee asks a question</option>
+            <option value="screenshot">tutee submits a screenshot</option>
+          </select>
 
-      <div class="hint-card">
-        <p>hint2hint2hint2hint2hint2hint2hint2hint2hint2hint2hint2.23232</p>
+          <div id="situation-hint" style="height:100px" class="prob-text">
+            
+          </div>
+
+        </div>
       </div>
 
     </div>
