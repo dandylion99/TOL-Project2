@@ -217,30 +217,30 @@
         <div class="prob-text">Jenny just celebrated her 18th birthday and she’s an incoming college student! Unfortunately college is expensive and she applied for student loans. The government gives her $30,000 with a simple interest plan at an annual interest rate of 8%. The bank gives her $30,000 with a compound interest plan at an annual interest rate of 7%.</div>
       </div>
       <div id="simple-cal">
-        <p class="header">Simple Interest Calculator</p>
+        <div class="header">Simple Interest Calculator</div>
         <div class="prob-text"> A=P(1+r*t) </div>
         <form name="simpleCal">
         P = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-capital">
         r = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-rate" >
         t = <input onchange="simpleCalcu();" class="input-blank" type="number" id="sim-time">
-        <p > A = <input id="sim-A" readonly="readonly"> </p>
+        <div> A = <input id="sim-A" readonly="readonly"> </div>
       </form>
       </div>
 
       <div id="compound-cal">
-        <p class="header">Compound Interest Calculator</p>
+        <div class="header">Compound Interest Calculator</div>
         <div class="prob-text"> A=P(1+r)^t </div>
         P = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-capital">
         r = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-rate"> 
         t = <input onchange="compoundCalcu();" class="input-blank" type="number" id="com-time"> 
         <br>
 
-        <p>A = <input id="com-A" readonly="readonly"> </p>
+        <div>A = <input id="com-A" readonly="readonly"> </div>
 
       </div>
 
       <div id="answer-container">
-      <p class="header">Answer Area</p>
+      <div class="header">Answer Area</div>
 
         <div id="q1" class="prob-text"> Q1: How much debt does Jenny have to repay the government in 10 years?<input type="number" name="q1-answer" id="q1-answer" class="input-blank">
         <button class="submit-button" id="submit-q1" onclick="submit(this);">submit</button></div>
@@ -256,10 +256,11 @@
 
     <div id="hint-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width: 20%; height: 95%; float:left; display:inline">
       <h4 class="header">Hints</h4>
-
-        
         <div class="hint-card">
-          Remember to send your screenshot to the tutor!
+           If you have any confusion, feel free to ask your tutor a question! Ask about specific concepts, key words, etc. Broad questions like “how to solve this problem?” might be less effective.
+        </div>
+        <div class="hint-card">
+           After your tutor sends the feedback, rememebr to correct your answer!
         </div>
       
 
