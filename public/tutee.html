@@ -48,7 +48,11 @@
   <link rel="stylesheet" href="styles/main.css">
 
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+
   <script language="javascript">
+
   var Q = "";
 
   function simpleCalcu(){
@@ -119,6 +123,63 @@
 
   }
 
+  function waitForElementToDisplay(selector, callback, checkFrequencyInMs, timeoutInMs) {
+    var startTimeInMs = Date.now();
+    (function loopSearch() {
+      if (document.querySelector(selector) != null) {
+        callback();
+        return;
+      }
+      else {
+        setTimeout(function () {
+          if (timeoutInMs && Date.now() - startTimeInMs > timeoutInMs)
+            return;
+          loopSearch();
+        }, checkFrequencyInMs);
+      }
+    })();
+  }
+  
+  /*
+  var downloadUrl;
+  function screenShot() {
+
+
+    // 把DOM元素转成海报
+    var canvasDom = $("#prob-info-container").get(0); //将jQuery对象转换为dom对象
+    var canvasBox = $("#answer-container").get(0);
+    new html2canvas(canvasDom).then(function (canvas) {
+      var canvasWidth = canvas.width; // canvas宽度
+      var canvasHeight = canvas.height; // canvas高度
+      var img = Canvas2Image.convertToImage(canvas, canvasWidth, canvasHeight); // 调用Canvas2Image插件
+      canvasBox.appendChild(img);
+      downloadUrl = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    });
+    // 生成二维码
+    
+    jQuery('#qrcode6').qrcode({
+      render: "canvas", 
+      width: 125, 
+      height: 125, 
+      text: "https://www.baidu.com/"
+    })
+    
+  });
+  // 保存图片
+  function screenShot() {
+    let aLink = document.createElement('a');
+    aLink.style.display = 'none';
+    aLink.href = downloadUrl;
+    aLink.download = "canvas.png";
+    // 触发点击-然后移除
+    document.body.appendChild(aLink);
+    aLink.click();
+    document.body.removeChild(aLink);
+    
+  };
+  */
+
+
 
   </script>
 
@@ -183,13 +244,13 @@
 
         <div id="q1" class="prob-text"> Q1: How much debt does Jenny have to repay the government in 10 years?<input type="number" name="q1-answer" id="q1-answer" class="input-blank">
         <button class="submit-button" id="submit-q1" onclick="submit(this);">submit</button></div>
-        <br>
+        
         <div id="q2" class="prob-text"> Q2: How much debt does Jenny have to repay the bank in 10 years? (Please keep 2 digits) <input type="number" name="q2-answer" id="q2-answer" class="input-blank">
         <button class="submit-button" id="submit-q2" onclick="submit(this)";>submit</button></div>
-        <br>
+        
         <div id="q3" class="prob-text"> Q3: Should Jenny loan money from the government or the bank? <input type="text" name="q3-answer" id="q3-answer" class="input-blank">
         <button class="submit-button" id="submit-q3" onclick="submit(this);">submit</button></div>
-        <br>
+        
       </div>
     </div>
 
