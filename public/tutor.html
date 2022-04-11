@@ -237,10 +237,11 @@
         <h3><i class="material-icons">chat_bubble_outline</i> Friendly Chat</h3>
       </div>
       <div id="user-container">
-        <div hidden id="user-pic"></div>
-        <div hidden id="user-name"></div>
-        <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          Sign-out
+        <!-- <div hidden id="user-pic"></div>
+        <div hidden id="user-name"></div> -->
+        <!-- <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white"> -->
+        <button hidden id="sign-out">
+          Sign out
         </button>
         <button id="sign-in">
           <i class="material-icons">account_circle</i> Sign in with Google
@@ -249,11 +250,11 @@
     </div>
   </header>
 
-  <main class="mdl-layout__content mdl-color--grey-100" style="width=100%">
+  <main class="mdl-layout__content mdl-color--grey-100" style="width:100%">
     <div id="feedback-area-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width:40%; height:95%; float:left; display:inline">
       <div id="probdcrp-container">
         <p class="header">Problem Description</p>
-        <p class="prob-text">Jenny just celebrated her 18th birthday and she’s an incoming college student! Unfortunately college is expensive and she applied for student loans. The government gives her $30,000 with a simple interest plan at an annual interest rate of 8%. The bank gives her $30,000 with a compound interest plan at an annual interest rate of 7%.</p>
+        <p class="prob-text">Jenny just celebrated her 18th birthday and she's an incoming college student! Unfortunately college is expensive and she applied for student loans. The government gives her $30,000 with a simple interest plan at an annual interest rate of 8%. The bank gives her $30,000 with a compound interest plan at an annual interest rate of 7%.</p>
       </div>
 
 
@@ -358,7 +359,7 @@
       <p class="header">Hints for Feedback</p>
       <div class="hint-card">
         <div>
-          <div class="feedback-hint">Select your current situation and see hints for feedback!</div>
+          <div id="current" class="feedback-hint">Please select your current situation to get hints about providing effective feedback!</div>
           If <select id="select-situation" onchange="changeHint();">
             <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
             <option value="pause">tutee pauses too long</option>
@@ -375,7 +376,7 @@
 
     </div>
 
-    <div id="messages-card-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="float:left; display:inline; width:35%; height: 95%;">
+    <div id="messages-card-container" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="float:left; display:inline; width:35%; height:95%;">
 
       <!-- Messages container -->
       <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop" style="width:100%">

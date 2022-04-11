@@ -48,7 +48,6 @@
   function myFunction(){
     var x = document.getElementById("sim-capital");
     var y = document.getElementById("sim-rate");
-
     y.value=x.value;
   };
 
@@ -57,6 +56,7 @@
 
   <!-- App Styling -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://use.typekit.net/jnb6wvl.css">
   <link rel="stylesheet" href="styles/main.css">
 
   <!-- TODO: Enable First Input Delay polyfill library. -->
@@ -67,7 +67,7 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing logo -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+  <!-- <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
         <h3><i class="material-icons">chat_bubble_outline</i> Friendly Chat</h3>
@@ -83,21 +83,27 @@
         </button>
       </div>
     </div>
-  </header>
+  </header> -->
 
 <div style="width: 100%; vertical-align: middle; text-align: center; margin:auto">
-  <div class="role-box" style="width:30%;" onclick="window.location.href='tutor.html'">
-    <img src="images/icon-tutor.png" style="width:50%;margin:auto" >
-    <div class="role-button">I'm the tutor</div>
+  
+  <div class="instruction" style="width: 30%; text-align: left; margin-left: 35%">
+    <h2>Learn compound interest with peers!</h2>
+    <p>If you're assigned to be a <u>tutor</u>, support your tutee when they need help. Not sure how to tutor? Don't worry, we will give you hints on how to give effective feedback to your peer!</p>
+    <p>If you're assigned to be a <u>tutee</u>, here are some practice problems  to check your learning. Don't be shy to ask your tutor for help if you're stuck or have any questions!</p>
+    <p><strong>Your assigned role:</strong></p>
   </div>
-  <div class="role-box" style="width:30%;"  onclick="window.location.href='tutee.html'">
-    <img src="images/icon-tutee.png" style="width:50%;margin:auto">
-    <div class="role-button">I'm the tutee</div>
-    <!--<button  style="height:400">Tutee</button>-->
+
+  <div class="role-box" style="width:15%; height:45%;" onclick="window.location.href='tutor.html'">
+    <img src="images/key.png" style="width:60%;margin: 10% 0 5% 0" >
+    <div class="role-button">Tutor</div>
+  </div>
+  <div class="role-box" style="width:15%; height:45%;"  onclick="window.location.href='tutee.html'">
+    <img src="images/lock.png" style="width:60%;margin: 10% 0 5% 0">
+    <div class="role-button">Tutee</div>
+    <!--<button style="height:400">Tutee</button>-->
   </div>
 <div>
-
-
 
 <!-- This script is created by webpack -->
 <script src="scripts/main.js"></script>
